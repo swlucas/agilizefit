@@ -21,7 +21,7 @@ export default function() {
         </View>
       </View>
       <View>
-        <ChallengeItem />
+        <ChallengeItem status={0} />
       </View>
     </View>
   );
