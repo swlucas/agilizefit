@@ -87,8 +87,25 @@ export default class App extends React.Component<Props> {
       return (
         <Modal visible={visible} onRequestClose={() => onRequestClose()}>
           <View style={{ flex: 1 }}>
+            <View
+              style={{
+                flex: 1,
+                backgroundColor: "#5A1186",
+                justifyContent: "center"
+              }}
+            >
+              <TouchableOpacity
+                style={{ padding: 5, marginHorizontal: 10 }}
+                onPress={() => onRequestClose()}
+              >
+                <Ionicons
+                  name="ios-arrow-back"
+                  style={{ color: "#fff", fontSize: 40 }}
+                />
+              </TouchableOpacity>
+            </View>
             <Camera
-              style={{ flex: 1 }}
+              style={{ flex: 9 }}
               type={this.state.cameraType}
               ref={ref => {
                 this.camera = ref;
