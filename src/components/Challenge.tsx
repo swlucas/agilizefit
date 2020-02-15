@@ -8,12 +8,12 @@ export interface Props {
 export default function(props: Props) {
   const { onPress } = props;
   return (
-    <View>
+    <View style={{ padding: 10 }}>
       <View
         style={{
           flexDirection: "row",
           width: "100%",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
           alignItems: "center"
         }}
       >
@@ -25,8 +25,7 @@ export default function(props: Props) {
         </View>
       </View>
       <View>
-        <ChallengeItem onPress={(id: number) => onPress(id)} />
-        <ChallengeItem status={0} />
+        <ChallengeItem onPress={(id: number) => onPress(id)} status={1} />
       </View>
     </View>
   );

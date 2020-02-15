@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import Header from "./components/Header";
 import Classification from "./components/Classification";
 import Season from "./components/Season";
@@ -27,8 +27,8 @@ const Main = () => {
               width: 300,
               height: 300,
               margin: 5,
-              borderWidth: 1,
-              borderColor: "#000"
+              borderColor: "#000",
+              elevation: 1
             }}
           >
             <Challenge
@@ -39,9 +39,6 @@ const Main = () => {
             ></Challenge>
           </View>
         </ScrollHorizontal>
-        <TouchableOpacity onPress={() => setModalVisible(true)}>
-          <Text>Abrir câmera</Text>
-        </TouchableOpacity>
       </SafeAreaView>
     </>
   );
