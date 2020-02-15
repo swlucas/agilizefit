@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native';
-import Header from './components/Header';
-import Classification from './components/Classification';
-import Season from './components/Season';
-import Challenge from './components/Challenge';
-import Camera from './components/Camera';
+import React, { useState } from "react";
+import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
+import Header from "./components/Header";
+import Classification from "./components/Classification";
+import Season from "./components/Season";
+import Challenge from "./components/Challenge";
+import Camera from "./components/Camera";
+import ScrollHorizontal from "./components/ScrollHorizontal";
 
 const data = [{}];
 
@@ -14,25 +15,27 @@ const Main = () => {
     <>
       <SafeAreaView>
         <Header />
-        <Classification point={10} user={'neto'} position={3} />
+        <Classification point={10} user={"neto"} position={3} />
         <Season actual={1} point={10} />
         <Camera
           visible={modaVisible}
-          onTakePhoto={() => console.log('XXXXXXX')}
+          onTakePhoto={() => console.log("XXXXXXX")}
           onRequestClose={() => setModalVisible(false)}
         />
 
         <ScrollHorizontal data={[1, 2, 3, 4, 5, 6]} scrollToIndex={4}>
           <View
             style={{
-              width: 200,
-              height: 200,
-              backgroundColor: "red",
-              margin: 5
+              width: 300,
+              height: 300,
+              margin: 5,
+              borderWidth: 1,
+              borderColor: "#000"
             }}
-          ></View>
+          >
+            <Challenge></Challenge>
+          </View>
         </ScrollHorizontal>
-        <Challenge></Challenge>
         <TouchableOpacity onPress={() => setModalVisible(true)}>
           <Text>Abrir câmera</Text>
         </TouchableOpacity>
