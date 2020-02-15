@@ -3,9 +3,12 @@ import { View, TouchableOpacity, Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 interface Props {
   onPress: () => void;
+  status: string;
 }
 
 export default function item(props: Props) {
+  const { onPress, status } = props;
+
   return (
     <TouchableOpacity
       style={{
@@ -15,6 +18,7 @@ export default function item(props: Props) {
         justifyContent: 'space-between',
         flexDirection: 'row'
       }}
+      onPress={() => onPress}
     >
       <View
         style={{
