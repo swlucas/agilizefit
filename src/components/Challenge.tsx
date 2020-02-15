@@ -1,6 +1,6 @@
-import React from "react";
-import { View, Text } from "react-native";
-import ChallengeItem from "./challengeItem";
+import React from 'react';
+import { View, Text } from 'react-native';
+import ChallengeItem from './challengeItem';
 
 export interface Props {
   onPress: (id: number) => void;
@@ -11,10 +11,10 @@ export default function(props: Props) {
     <View style={{ padding: 10 }}>
       <View
         style={{
-          flexDirection: "row",
-          width: "100%",
-          justifyContent: "space-between",
-          alignItems: "center"
+          flexDirection: 'row',
+          width: '100%',
+          justifyContent: 'space-between',
+          alignItems: 'center'
         }}
       >
         <View>
@@ -25,7 +25,7 @@ export default function(props: Props) {
         </View>
       </View>
       <View>
-        <ChallengeItem onPress={(id: number) => onPress(id)} status={1} />
+        <ChallengeItem onPress={(id: number) => onPress(id)} status={0} />
       </View>
     </View>
   );
