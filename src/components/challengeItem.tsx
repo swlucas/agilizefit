@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 interface Props {
   onPress: () => void;
-  status: string;
+  status: number;
 }
 
 export default function item(props: Props) {
@@ -12,13 +12,17 @@ export default function item(props: Props) {
   return (
     <TouchableOpacity
       style={{
-        backgroundColor: '#FAFEC1',
+        backgroundColor: status === 1 ? '#FAFEC1' : '#fff',
         height: 40,
         alignItems: 'center',
         justifyContent: 'space-between',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        borderWidth: 1,
+        borderColor:
+          status === 2 ? '#00A871' : status === 3 ? '#F80303' : '#fff'
       }}
       onPress={() => onPress}
+      disabled={status === 0 && true}
     >
       <View
         style={{
@@ -26,8 +30,15 @@ export default function item(props: Props) {
           alignItems: 'center'
         }}
       >
-        <FontAwesome name='unlock' />
-        <Text>Treino</Text>
+        <View>
+          {status === 0 && <AntDesign name='lock' />}
+          {status === 1 && <AntDesign name='unlock' />}
+          {status === 2 && <AntDesign name='checkcircle' />}
+          {status === 3 && <AntDesign name='closecircle' />}
+        </View>
+        <View>
+          <Text>Treino</Text>
+        </View>
       </View>
       <View>
         <Text>10</Text>
