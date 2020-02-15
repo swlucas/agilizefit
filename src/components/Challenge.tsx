@@ -26,6 +26,7 @@ export default function(props: Props) {
       </View>
       <View>
         <ChallengeItem onPress={(id: number) => onPress(id)} />
+        <ChallengeItem status={0} />
       </View>
     </View>
   );
