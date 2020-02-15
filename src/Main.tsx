@@ -7,8 +7,6 @@ import Challenge from "./components/Challenge";
 import Camera from "./components/Camera";
 import ScrollHorizontal from "./components/ScrollHorizontal";
 
-const data = [{}];
-
 const Main = () => {
   const [modaVisible, setModalVisible] = useState(false);
   return (
@@ -33,7 +31,12 @@ const Main = () => {
               borderColor: "#000"
             }}
           >
-            <Challenge></Challenge>
+            <Challenge
+              onPress={(id: number) => {
+                console.log(id);
+                setModalVisible(true);
+              }}
+            ></Challenge>
           </View>
         </ScrollHorizontal>
         <TouchableOpacity onPress={() => setModalVisible(true)}>

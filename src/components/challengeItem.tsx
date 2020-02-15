@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import React from "react";
+import { View, TouchableOpacity, Text } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 interface Props {
-  onPress: () => void;
+  onPress: (id: number) => void;
   status: string;
 }
 
@@ -12,21 +12,21 @@ export default function item(props: Props) {
   return (
     <TouchableOpacity
       style={{
-        backgroundColor: '#FAFEC1',
+        backgroundColor: "#FAFEC1",
         height: 40,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        flexDirection: 'row'
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexDirection: "row"
       }}
-      onPress={() => onPress}
+      onPress={() => onPress(1)}
     >
       <View
         style={{
-          flexDirection: 'row',
-          alignItems: 'center'
+          flexDirection: "row",
+          alignItems: "center"
         }}
       >
-        <FontAwesome name='unlock' />
+        <FontAwesome name="unlock" />
         <Text>Treino</Text>
       </View>
       <View>

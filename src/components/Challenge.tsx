@@ -1,16 +1,20 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import ChallengeItem from './challengeItem';
+import React from "react";
+import { View, Text } from "react-native";
+import ChallengeItem from "./challengeItem";
 
-export default function() {
+export interface Props {
+  onPress: (id: number) => void;
+}
+export default function(props: Props) {
+  const { onPress } = props;
   return (
     <View>
       <View
         style={{
-          flexDirection: 'row',
-          width: '100%',
-          justifyContent: 'space-around',
-          alignItems: 'center'
+          flexDirection: "row",
+          width: "100%",
+          justifyContent: "space-around",
+          alignItems: "center"
         }}
       >
         <View>
@@ -21,7 +25,7 @@ export default function() {
         </View>
       </View>
       <View>
-        <ChallengeItem />
+        <ChallengeItem onPress={(id: number) => onPress(id)} />
       </View>
     </View>
   );
