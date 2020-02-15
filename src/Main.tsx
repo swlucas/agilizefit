@@ -1,12 +1,17 @@
-import React from "react";
-import { View, Text } from "react-native";
-import Camera from "./components/Camera";
+import React from 'react';
+import { View, Text, SafeAreaView } from 'react-native';
+import Header from './components/Header';
+import Camera from './components/Camera';
+import Classification from './components/Classification';
+import Season from './components/Season';
 
 const Main = () => {
   return (
-    <View>
-      <Camera />
-    </View>
+    <SafeAreaView>
+      <Header />
+      <Classification />
+      <Season />
+    </SafeAreaView>
   );
 };
 
