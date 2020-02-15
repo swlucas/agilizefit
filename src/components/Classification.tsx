@@ -2,10 +2,13 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 interface Props {
+  user: string;
   position: number;
+  point: number;
 }
 
 export default function Classification(props: Props) {
+  const { position, user, point } = props;
   return (
     <View
       style={{
@@ -26,13 +29,13 @@ export default function Classification(props: Props) {
           marginRight: 20
         }}
       >
-        <Text style={{ color: '#fff', fontWeight: 'bold' }}>3</Text>
+        <Text style={{ color: '#fff', fontWeight: 'bold' }}>{position}</Text>
       </View>
       <View>
         <Text>
-          Adriano, você tem{' '}
-          <Text style={{ color: '#4EA94B', fontWeight: 'bold' }}>40</Text>
-          Pontos
+          {user}, você tem{' '}
+          <Text style={{ color: '#4EA94B', fontWeight: 'bold' }}>{point}</Text>{' '}
+          pontos
         </Text>
       </View>
     </View>

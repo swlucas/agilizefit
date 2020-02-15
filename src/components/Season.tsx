@@ -1,7 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function Season() {
+interface Props {
+  actual: number;
+  point: number;
+}
+
+export default function Season(props: Props) {
+  const { actual, point } = props;
   return (
     <View
       style={{
@@ -12,13 +18,13 @@ export default function Season() {
     >
       <View>
         <Text style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
-          1 Temporada
+          {actual} Temporada
         </Text>
       </View>
       <View>
         <Text>
           Pontos:
-          <Text style={{ color: '#4EA94B', fontWeight: 'bold' }}>10</Text>
+          <Text style={{ color: '#4EA94B', fontWeight: 'bold' }}>{point}</Text>
         </Text>
       </View>
     </View>
